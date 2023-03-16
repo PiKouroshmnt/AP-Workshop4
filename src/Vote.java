@@ -20,13 +20,13 @@ public class Vote {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof VotingSystem)) return false;
-        VotingSystem that = (VotingSystem) o;
-        return Objects.equals(getVotingList(), that.getVotingList());
+        if (o == null || getClass() != o.getClass()) return false;
+        Vote vote = (Vote) o;
+        return voter.equals(vote.voter) && date.equals(vote.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getVotingList());
+        return Objects.hash(voter, date);
     }
 }
