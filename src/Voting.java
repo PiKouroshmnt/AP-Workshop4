@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Date;
+import java.util.*;
 
 public class Voting {
     private int type;
@@ -62,7 +59,18 @@ public class Voting {
     }
     public void vote (Person person){
         if(isAnonymous){
-
+            int randomNumber;
+            randomNumber = new Random().nextInt(choices.size());
+            int counter = 0;
+            for (String choice : choices.keySet()){
+                if(randomNumber == counter){
+                    Vote vote = new Vote(person, new Date().toString());
+                    choices.get(choice).add(vote);
+                    break;
+                }
+                else
+                    counter++;
+            }
         }
 
     }
