@@ -36,4 +36,22 @@ public class VotingSystem {
     public int hashCode() {
         return Objects.hash(votingList);
     }
+
+    public void printResults(int index) {
+        votingList.get(index).printResult();
+    }
+
+    public void printVoters(int index) {
+        votingList.get(index).printVoters();
+    }
+
+    public void printVoting(int index) {
+        Voting voting = votingList.get(index);
+        ArrayList<String> choices = voting.getChoices();
+        Iterator<String> it = choices.iterator();
+        System.out.println("Question: " + voting.getQuestion() + "\n");
+        for(int i = 0;it.hasNext();i++){
+            System.out.println(i+1 + ". " + it.next());
+        }
+    }
 }
