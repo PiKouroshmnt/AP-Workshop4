@@ -14,6 +14,6 @@ public class Person {
         return lastName;
     }
     public String toString(){
-        return (firstName + lastName);
+        return (firstName + " " + lastName);
     }
 }

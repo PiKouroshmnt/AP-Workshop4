@@ -68,17 +68,18 @@ public class Voting {
     }
     public void printResult(){
         for(String choiceInChoicesMap : choices.keySet()){
-            System.out.println("Choice: " + choiceInChoicesMap + "has:" + choices.get(choiceInChoicesMap).size() + "Votes");
+            System.out.println("Choice: " + choiceInChoicesMap + " has: " + choices.get(choiceInChoicesMap).size() + " Votes");
         }
     }
 
     public void printVoters(){
         if(!isAnonymous){
             for(String choiceInChoicesMap : choices.keySet()){
-                System.out.println("Choice: " + choiceInChoicesMap + ":\n");
+                System.out.println("Choice: " + choiceInChoicesMap + " :\n");
                 for(Vote vote : choices.get(choiceInChoicesMap)){
                     System.out.println(vote.getVoter().toString());
                 }
+                System.out.println();
             }
         }
     }
