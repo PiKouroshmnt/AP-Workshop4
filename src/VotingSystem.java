@@ -54,4 +54,12 @@ public class VotingSystem {
             System.out.println(i+1 + ". " + it.next());
         }
     }
+
+    public void vote(int index, Person voter, ArrayList<String> voterChoices) {
+        votingList.get(index).vote(voter,voterChoices);
+    }
+
+    public void vote(int index, Person person) {
+        votingList.get(index).vote(person);
+    }
 }
